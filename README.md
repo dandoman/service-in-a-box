@@ -2,7 +2,7 @@ Setup
 ----
 1. Install git (https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 2. In a terminal, run `git clone https://github.com/dandoman/team9sofine.git`
-3. Then `$cd team9sofine`
+3. Then `$cd service-in-a-box`
 
 #### Back End
 What you need:
