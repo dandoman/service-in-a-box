@@ -4,7 +4,6 @@ import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import javax.print.attribute.standard.DateTimeAtCompleted;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -24,9 +23,11 @@ import com.merccann.view.EntityView;
 
 import io.swagger.annotations.ApiOperation;
 import lombok.Setter;
+import lombok.extern.log4j.Log4j2;
 
 @Controller
 @RequestMapping("/api/entity")
+@Log4j2
 public class AppApi {
 
 	@Autowired
@@ -38,6 +39,7 @@ public class AppApi {
 	@ResponseBody
 	@Transactional
 	public EntityView createEntity(@RequestBody CreateEntityRequest r) {
+		log.info ("Received request to create entity: " + r);
 		Entity createEntity = appDao.createEntity(r.getName(), r.getDescription());
 		return EntityView.fromEntity(createEntity);
 	}

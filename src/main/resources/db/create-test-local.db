@@ -1,4 +1,5 @@
-psql -U postgres -d postgres
+sudo su postgres
+psql
 CREATE DATABASE dev;
 CREATE USER dev WITH PASSWORD 'dev';
 GRANT ALL PRIVILEGES ON DATABASE dev to dev;
